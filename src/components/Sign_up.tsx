@@ -35,6 +35,13 @@ const formSchema = z.object({
   zip_code: z.string(),
 });
 
+const placeholders = [
+  { name: "first_name", placeholder: "First Name" },
+  { name: "last_name", placeholder: "Last Name" },
+  { name: "email", placeholder: "Email" },
+  { name: "zip_code", placeholder: "Zip Code" },
+];
+
 export default function Signup() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -51,92 +58,41 @@ export default function Signup() {
   }
 
   return (
-    <section className="section">
-      <div className=" bg-[#FEBD1A] rounded-[10px] mt-[60px] py-[74px]">
-        <h2 className="text-[35px] text-center  font-bold">
+    <section className=" container mt-[60px] rounded-[10px] bg-primary py-[74px]">
+      <div className="">
+        <h2 className="text-center text-[22px] font-bold lg:text-[35px]">
           Sign up for unlock the power of secure, insightful battery management
         </h2>
 
         <div className="mt-[42px]">
           <Form {...form}>
-            <form
-              onSubmit={form.handleSubmit(onSubmit)}
-              
-            >
+            <form onSubmit={form.handleSubmit(onSubmit)}>
+              <div className="flex  flex-wrap  justify-center gap-5">
+                {placeholders.map((item, index) => (
+                  <FormField
+                    key={index}
+                    control={form.control}
+                    name={item.name as "first_name" | "last_name" | "email" | "zip_code"}
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormControl className="h-[60px] w-[320px] border border-[#4B4B4B] bg-inherit">
+                          <Input
+                            placeholder={item.placeholder}
+                            {...field}
+                            className="text-[18px] text-black"
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                ))}
+              </div>
 
-                <div className="flex gap-4 justify-center"> <FormField
-                control={form.control}
-                name="first_name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormControl className=" w-[320px] h-[60px] bg-inherit border border-[#4B4B4B]  ">
-                      <Input
-                        placeholder="Enter First Name"
-                        {...field}
-                        className="text-black text-[18px]"
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="last_name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormControl className=" w-[320px] h-[60px] bg-inherit border border-[#4B4B4B]  ">
-                      <Input
-                        placeholder="Enter Last Name"
-                        {...field}
-                        className="text-black text-[18px]"
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormControl className=" w-[320px] h-[60px] bg-inherit border border-[#4B4B4B]  ">
-                      <Input
-                        placeholder="Enter Email Address"
-                        {...field}
-                        className="text-black text-[18px]"
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="zip_code"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormControl className=" w-[320px] h-[60px] bg-inherit border border-[#4B4B4B]  ">
-                      <Input
-                        placeholder="Enter Zip Code"
-                        {...field}
-                        className="text-black text-[18px]"
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              /></div>
-             
-
-              <div className="flex justify-center ">
+              <div className="flex justify-center">
                 <Button
                   variant="secondary"
-                  className="w-[162px] h-[58px] mt-[40px] bg-black text-white text-1.5xl  font-medium"
+                  className="text-1.5xl mt-[40px] h-[41px] w-[131px] lg:h-[58px] lg:w-[162px] bg-black font-medium text-white"
                   type="submit"
                 >
                   Sign Up Now !

@@ -16,20 +16,18 @@ const VideoContainer = () => {
   return (
     
       <div
-        className="bg-join bg-center w-[804px] h-[559px] border rounded-[15px] z-0 flex justify-center items-center relative"
+        className="bg-join bg-no-repeat bg-center   border rounded-[15px] z-0 flex justify-center items-center relative"
         style={{
-          width: "804px",
-          height: "563px",
-          backgroundSize: "100% 100%",
+         
+          height: "100%",
+          backgroundSize: "cover",
         }}
       >
    
         <video
           id="videoElement"
           className="absolute w-full h-full"
-          style={{
-            objectFit: "cover",
-          }}
+          
           src="/path_to_video.mp4"
           type="video/mp4"
           controls={false}
@@ -46,6 +44,7 @@ const VideoContainer = () => {
             alt="Play Video"
             width={126}
             height={107}
+            className="w-16 h-16 lg:w-24 lg:h-24"
           />
         </button>
       </div>

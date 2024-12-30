@@ -8,76 +8,60 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+const faq = [
+  {
+    question: "What is Auto Connect?",
+    answer:
+      "Sodales posuere facilisi metus elementum ipsum egestas amet amet mattis commodo Nunc tempor amet massa diam mauris. Risus sodales interdum magna felis adipiscing consectetur sed consectetur.",
+  },
+  {
+    question: "How does Auto Connect monitor my EV's battery health?",
+    answer:
+      "Sodales posuere facilisi metus elementum ipsum egestas amet amet mattis commodo Nunc tempor amet massa diam mauris. Risus sodales interdum magna felis adipiscing consectetur sed consectetur.",
+  },
+  {
+    question: "Is Auto Connect free to use?",
+    answer:
+      "Sodales posuere facilisi metus elementum ipsum egestas amet amet mattis commodo Nunc tempor amet massa diam mauris. Risus sodales interdum magna felis adipiscing consectetur sed consectetur.",
+  },
+  {
+    question: "How does Auto Connect compare my EV's battery to others?",
+    answer:
+      "Sodales posuere facilisi metus elementum ipsum egestas amet amet mattis commodo Nunc tempor amet massa diam mauris. Risus sodales interdum magna felis adipiscing consectetur sed consectetur.",
+  },
+  {
+    question:
+      "How will Auto Connect help me understand my EV's battery degradation?",
+    answer:
+      "Sodales posuere facilisi metus elementum ipsum egestas amet amet mattis commodo Nunc tempor amet massa diam mauris. Risus sodales interdum magna felis adipiscing consectetur sed consectetur.",
+  },
+];
+
 export default function Faq() {
   return (
-    <section className="section px-[137px]">
-      <h2 className="text-[55px] text-center mt-[87px] font-bold">
+    <section className="container px-5 lg:px-[70px] xl:px-[137px]">
+      <h2 className="mt-10 text-center text-[22px] font-bold lg:mt-[87px] lg:text-[55px]">
         Frequently Asked Questions
       </h2>
-      <div className="mt-[40px] px-[42px]">
+      <div className="mt-10 px-5 lg:px-[42px]">
         <Accordion type="single" collapsible>
-          <AccordionItem value="item-1">
-            <AccordionTrigger className=" text-[20px] font-semibold">
-              What is Auto Connect?
-            </AccordionTrigger>
-            <AccordionContent className=" ml-20 text-[22px] text-[#929191] font-normal">
-              Sodales posuere facilisi metus elementum ipsum egestas amet amet
-              mattis commodo Nunc tempor amet massa diam mauris. Risus sodales
-              interdum magna felis adipiscing consectetur sed consectetur.
-            </AccordionContent>
-          </AccordionItem>
-
-          <AccordionItem value="item-2">
-            <AccordionTrigger className=" text-[20px] font-semibold">
-              How does Auto Connect monitor my EV&apos;s battery health?
-            </AccordionTrigger>
-            <AccordionContent className=" ml-20 text-[22px] text-[#929191] font-normal">
-              Sodales posuere facilisi metus elementum ipsum egestas amet amet
-              mattis commodo Nunc tempor amet massa diam mauris. Risus sodales
-              interdum magna felis adipiscing consectetur sed consectetur.
-            </AccordionContent>
-          </AccordionItem>
-
-          <AccordionItem value="item-3">
-            <AccordionTrigger className=" text-[20px] font-semibold">
-              Is Auto Connect free to use?
-            </AccordionTrigger>
-            <AccordionContent className=" ml-20 text-[22px] text-[#929191] font-normal">
-              Sodales posuere facilisi metus elementum ipsum egestas amet amet
-              mattis commodo Nunc tempor amet massa diam mauris. Risus sodales
-              interdum magna felis adipiscing consectetur sed consectetur.
-            </AccordionContent>
-          </AccordionItem>
-
-          <AccordionItem value="item-4">
-            <AccordionTrigger className=" text-[20px] font-semibold">
-              How does Auto Connect compare my EV&apos;s battery to others?
-            </AccordionTrigger>
-            <AccordionContent className=" ml-20 text-[22px] text-[#929191] font-normal">
-              Sodales posuere facilisi metus elementum ipsum egestas amet amet
-              mattis commodo Nunc tempor amet massa diam mauris. Risus sodales
-              interdum magna felis adipiscing consectetur sed consectetur.
-            </AccordionContent>
-          </AccordionItem>
-
-          <AccordionItem value="item-4">
-            <AccordionTrigger className=" text-[20px] font-semibold">
-              How will Auto Connect help me understand my EV&apos;s battery
-              degradation?
-            </AccordionTrigger>
-            <AccordionContent className=" ml-20 text-[22px] text-[#929191] font-normal">
-              Sodales posuere facilisi metus elementum ipsum egestas amet amet
-              mattis commodo Nunc tempor amet massa diam mauris. Risus sodales
-              interdum magna felis adipiscing consectetur sed consectetur.
-            </AccordionContent>
-          </AccordionItem>
+          {faq.map((item, index) => (
+            <AccordionItem key={index} value={`item-${index}`}>
+              <AccordionTrigger className="text-[20px] font-semibold">
+                {item.question}
+              </AccordionTrigger>
+              <AccordionContent className="mx-2.5 text-[22px] font-normal text-[#929191] lg:mx-20">
+                {item.answer}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
         </Accordion>
       </div>
 
-      <div className="flex  justify-center ">
+      <div className="flex justify-center">
         <Button
           variant="secondary"
-          className="w-[230px] h-[65px] mt-[40px] bg-[#FEBD1A] text-2xl  font-medium"
+          className="mt-[40px] h-[65px] w-[230px] bg-[#FEBD1A] text-2xl font-medium"
         >
           <Link href="/more" className="text-black">
             Read More
