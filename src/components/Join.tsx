@@ -1,119 +1,66 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import Image from "next/image";
 import VideoContainer from "./Videocontainer";
+
+const advantages = [
+  "EV Maintenance",
+  "Long term value",
+  "Diagnostic tools",
+  "Best EV Practices",
+  "Compare to Other EVs",
+  "Informed Decisions",
+];
 
 export default function Join() {
   return (
-    <section className="section">
-      <div className="mx-[137px]">
-        <div className="grid grid-cols-2 gap-[62px]">
-          <VideoContainer />
-          <div className="mt-[28px] ml-[62px]">
-            <p className="text-[37px]   text-[#FEBD1A]">
+    <section>
+      <div className="container">
+        <div className="px-3 md:px-9 lg:mx-[50px] lg:grid lg:grid-cols-2 lg:gap-[62px] xl:mx-[110px]">
+          <div className="h-[373px] lg:h-[559px]">
+            <VideoContainer />
+          </div>
+
+          <div className="lg:mt-[28px]">
+            <p className="mt-5 text-lg font-semibold text-primary lg:mt-2 lg:text-2xl">
               Evolving Auto Care for the Electric Age
             </p>
-            <h2 className="text-[55px] font-bold leading-[60px]">
-              United to Tackle the Challenges Head-On
+            <h2 className="mt-1.5 text-[22px] font-bold md:leading-[40px] lg:text-[36px] xl:text-[55px] xl:leading-[60px]">
+              United to Tackle the Challenges <br /> Head-On
             </h2>
-            <p className=" mt-5 text-[20px] text-[#797979]">
+            <p className="mt-1.5 text-sm text-[#797979] lg:mt-5 lg:text-xl">
               Lorem ipsum dolor sit amet consectetur adipiscing elit. Donec
               felis suscipit mi urna nulla at tincidunt feugiat vulputate. Ante
               facilisis face pellentesque. Lorem ipsum dolor sit amet
               consectetur adipiscing elit. Donec felis suscipit mi urna nulla at
               tincidunt feugiat vulputate. Ante facilisis face pellentesque.
             </p>
-            <div className="grid grid-cols-2 mt-[36px]">
-              <div className="grid grid-cols-1 gap-[25px]">
-                <div className="flex items-start ">
-                  <Image
-                    src="/icon_check.svg"
-                    width={40}
-                    height={40}
-                    alt="check"
-                  />
-                  <p className="mt-[2px] ml-[17px] text-[22px]">
-                    EV Maintenance
-                  </p>
-                </div>
 
-                <div className="flex items-start ">
-                  <Image
-                    src="/icon_check.svg"
-                    width={40}
-                    height={40}
-                    alt="check"
-                  />
-                  <p className="mt-[2px] ml-[17px] text-[22px]">
-                    Long term value
+            <div className="mt-5 grid grid-cols-2 gap-2.5">
+              {advantages.map((advantage, index) => (
+                <div className="flex items-center gap-2" key={index}>
+                  <div className="lg:[url('/icon_check2.svg')] h-2.5 w-2.5 bg-[url('/icon_check1.svg')] bg-contain bg-no-repeat"></div>
+                  <p className="text-xs font-semibold md:text-base lg:ml-[17px] lg:mt-[2px] lg:text-[22px]">
+                    {advantage}
                   </p>
                 </div>
-
-                <div className="flex items-start ">
-                  <Image
-                    src="/icon_check.svg"
-                    width={40}
-                    height={40}
-                    alt="check"
-                  />
-                  <p className="mt-[2px] ml-[17px] text-[22px]">
-                    Diagnostic tools
-                  </p>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 gap-[25px]">
-                <div className="flex items-start ">
-                  <Image
-                    src="/icon_check.svg"
-                    width={40}
-                    height={40}
-                    alt="check"
-                  />
-                  <p className="mt-[2px] ml-[17px] text-[22px]">
-                    Best EV Practices
-                  </p>
-                </div>
-
-                <div className="flex items-start ">
-                  <Image
-                    src="/icon_check.svg"
-                    width={40}
-                    height={40}
-                    alt="check"
-                  />
-                  <p className="mt-[2px] ml-[17px] text-[22px]">
-                    Compare to Other EVs
-                  </p>
-                </div>
-
-                <div className="flex items-start ">
-                  <Image
-                    src="/icon_check.svg"
-                    width={40}
-                    height={40}
-                    alt="check"
-                  />
-                  <p className="mt-[2px] ml-[17px] text-[22px]">
-                    Informed Decisions
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
 
-        <div className="bg-join2 mt-[70px] py-[78px] text-white flex justify-center items-center">
-          <div className="flex flex-col items-center text-center w-[827px]">
-            <p className="text-[40px] font-bold ">
+        <div className="mt-[68px] bg-join2 bg-cover px-9 py-10 lg:py-[78px] 2xl:mx-[137px]">
+          <div className="flex flex-col items-center text-center text-white">
+            <p className="text-2xl font-bold lg:text-[40px] lg:leading-[60px]">
               Join Auto Connect and unlock the power of secure, insightful{" "}
-              <span className="text-[#FEBD1A]">BATTERY MANAGMENT</span>
+              <br /> <span className="text-primary">BATTERY MANAGMENT</span>
             </p>
-            <p className="text-[25px] mt-[20px]">Your EV deserves the best care, and it starts here</p>
+            <p className="mt-4 text-base lg:mt-5 lg:text-[25px]">
+              Your EV deserves the best care, and it starts here
+            </p>
 
             <Button
               variant="secondary"
-              className="w-[230px] h-[65px] mt-[40px] bg-[#FEBD1A] text-2xl    "
+              className="mt-5 h-[45px] w-[140px] bg-primary lg:mt-10 lg:h-[65px] lg:w-[230px] lg:text-2xl"
             >
               <Link href="/login" className="text-black">
                 Sign Up Now!

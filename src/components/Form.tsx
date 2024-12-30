@@ -14,6 +14,13 @@ import {
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
 
+const placeholders = [
+  { name: "first_name", placeholder: "First Name" },
+  { name: "last_name", placeholder: "Last Name" },
+  { name: "email", placeholder: "Email" },
+  { name: "zip_code", placeholder: "Zip Code" },
+];
+
 const formSchema = z.object({
   first_name: z
     .string()
@@ -52,91 +59,58 @@ export default function Logform() {
   }
 
   return (
-    <section className="section">
-      <div className=" flex flex-col  items-center  w-[577px] h-[719px] bg-[#FEBD1A] rounded-[10px] ">
-        <Image
-          src="/logo.svg"
-          alt="bg-advantages"
-          width={371}
-          height={186}
-          className="mt-5 mb-5"
-        />
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+    <div >   
+    <div className="flex flex-col  items-center  w-[390px] h-[469px] lg:w-[577px] lg:h-[719px]  bg-primary rounded-[10px] ">
+      <Image
+        src="/logo.svg"
+        alt="bg-advantages"
+        width={371}
+        height={186}
+        className="w-[186px] h-[94px] mt-10 lg:mt-5 mb-2.5  lg:w-[371px] lg:h-[186px] "
+      />
+      <div className=" "> <Form {...form} >
+        <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-2.5 lg:gap-7 items-center   ">
+          {placeholders.map((ph, index) => (
             <FormField
+              key={index}
               control={form.control}
-              name="first_name"
+              name={
+                ph.name as "first_name" | "last_name" | "email" | "zip_code"
+              }
               render={({ field }) => (
                 <FormItem>
-                  <FormControl className=" w-[461px] h-[72px] bg-white  ">
+                  <FormControl className="bg-white w-[336px] h-[50px] lg:w-[461px] lg:h-[72px]">
                     <Input
-                      placeholder="First Name"
+                      placeholder={ph.placeholder}
                       {...field}
-                      className="text-black text-[18px]"
+                      className="text-black text-[14px] lg:text-[18px]  "
                     />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
+          ))}
 
-            <FormField
-              control={form.control}
-              name="last_name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl className=" w-[461px] h-[72px] bg-white  ">
-                    <Input
-                      placeholder="Last Name"
-                      {...field}
-                      className="text-black text-[18px]"
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+          <div className="flex justify-items-center ">
+            <Button
+              type="submit"
+              className="w-[140px] h-[45] lg:w-[189px] lg:h-[62] text-[14px] lg:text-[18px]   bg-black lg:mr-3 lg:py-4"
+            >
+              Submit
+            </Button>
+            <Button
+              type="submit"
+              className="hidden lg:block w-[189px] h-[62] text-[18px] bg-black "
+            >
+              Google
+            </Button>
+          </div>
+        </form>
+      </Form></div>
+     
+    </div>
+  </div>
 
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl className=" w-[461px] h-[72px] bg-white  ">
-                    <Input
-                      placeholder="Email"
-                      {...field}
-                      className="text-black text-[18px]"
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="zip_code"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl className=" w-[461px] h-[72px] bg-white  ">
-                    <Input
-                      placeholder="Zip Code"
-                      {...field}
-                      className="text-black text-[18px]"
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <div className="flex justify-center ">
-              <Button type="submit" className="w-[189px] h-[62] text-[18px]  mr-3 py-4">Submit</Button>
-              <Button type="submit" className="w-[189px] h-[62] text-[18px]">Google</Button>
-            </div>
-          </form>
-        </Form>
-      </div>
-    </section>
   );
 }
