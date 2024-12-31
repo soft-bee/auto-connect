@@ -80,6 +80,8 @@ export default function Signup() {
                             placeholder={item.placeholder}
                             {...field}
                             className="text-[18px] text-black"
+                            aria-describedby={item.name}
+                            id={item.name+item.name}
                           />
                         </FormControl>
                         <FormMessage />

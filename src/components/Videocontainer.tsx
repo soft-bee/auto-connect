@@ -5,12 +5,12 @@ import Image from "next/image";
 
 const VideoContainer = () => {
   const handlePlayPause = () => {
-    const video = document.getElementById("videoElement");
-    if (video.paused) {
-      video.play();
-    } else {
-      video.pause();
-    }
+    // const video = document.getElementById("videoElement");
+    // if (video.paused) {
+    //   video.play();
+    // } else {
+    //   video.pause();
+    // }
   };
 
   return (
@@ -29,7 +29,6 @@ const VideoContainer = () => {
           className="absolute w-full h-full"
           
           src="/path_to_video.mp4"
-          type="video/mp4"
           controls={false}
           muted
         ></video>

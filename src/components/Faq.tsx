@@ -60,12 +60,10 @@ export default function Faq() {
 
       <div className="flex justify-center">
         <Button
-          variant="secondary"
-          className="mt-[40px] h-[65px] w-[230px] bg-[#FEBD1A] text-2xl font-medium"
+          asChild
+          className="mt-[40px] h-[42px] w-[131px] bg-primary text-2xl font-medium text-black lg:h-[65px] lg:w-[230px]"
         >
-          <Link href="/more" className="text-black">
-            Read More
-          </Link>
+          <Link href="/login">Read More</Link>
         </Button>
       </div>
     </section>
