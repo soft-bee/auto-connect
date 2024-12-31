@@ -19,6 +19,7 @@ export default function Hero() {
               </p>
 
               <Button
+                asChild
                 variant="secondary"
                 className="h-[45px] w-[145px] bg-primary lg:mt-[75px] lg:h-[65px] lg:w-[230px] lg:text-2xl"
               >
@@ -28,7 +29,7 @@ export default function Hero() {
               </Button>
             </div>
 
-            <div className="mt-11  sm:mb-11  justify-items-center 2xl:mt-0">
+            <div className="mt-11 justify-items-center sm:mb-11 2xl:mt-0">
               <Logform />
             </div>
           </div>

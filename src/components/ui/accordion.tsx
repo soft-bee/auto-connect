@@ -26,7 +26,7 @@ const AccordionTrigger = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
 >(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Header className="flex">
-    <Image src="/icon_Q.svg" alt="" width={20} height={33} className="mr-6 ml-2.5   lg:mr-6 lg:ml-9"/>
+    <Image src="icon_Q.svg" alt="" width={20} height={33} className="mr-6 ml-2.5   lg:mr-6 lg:ml-9"/>
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
@@ -37,7 +37,7 @@ const AccordionTrigger = React.forwardRef<
     >
       {children}
      
-      <Image src="/icon_plus.svg" alt="" width={20} height={20} className="shrink-0 text-muted-foreground transition-transform duration-200  mr-2.5 lg:mr-9 ml-6"/>
+      <Image src="icon_plus.svg" alt="" width={20} height={20} className="shrink-0 text-muted-foreground transition-transform duration-200  mr-2.5 lg:mr-9 ml-6"/>
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ))

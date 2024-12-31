@@ -22,7 +22,7 @@ export default function Footer() {
                   {benefits.map((benefit, index) => (
                     <li key={index} className="flex justify-start gap-5">
                       <Image
-                        src="/icon_list_style.svg"
+                        src="icon_list_style.svg"
                         alt="list"
                         width={10}
                         height={10}
@@ -61,7 +61,7 @@ export default function Footer() {
                       width={21}
                       height={21}
                     />
-                    <p className="text-[#FEBD1A]">office@yourwebsite.com</p>
+                    <p className="text-primary">office@yourwebsite.com</p>
                   </li>
                 </ul>
               </div>

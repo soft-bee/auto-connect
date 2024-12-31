@@ -2,37 +2,37 @@ import Image from "next/image";
 
 const advantages = [
   {
-    img: "/advantage_1.svg",
+    img: "advantage_1.svg",
     alt: "advantage1",
     title: "Only Battery Data is Collected",
     text: "Enjoy a hassle-free and secure registration process. Rest assured, your login details are never stored or shared.",
   },
   {
-    img: "/advantage_2.svg",
+    img: "advantage_2.svg",
     alt: "advantage2",
     title: "Only Battery Data is Collected",
     text: "Your privacy is our priority. Your data stays secure, and we never share it with anyone without your explicit consent.",
   },
   {
-    img: "/advantage_3.svg",
+    img: "advantage_3.svg",
     alt: "advantage3",
     title: "Data Privacy Guaranteed",
     text: "Your privacy is our priority. Your data stays secure, and we never share it with anyone without your explicit consent.",
   },
   {
-    img: "/advantage_4.svg",
+    img: "advantage_4.svg",
     alt: "advantage4",
     title: "Monthly Analytics & Battery Insights",
     text: "Get clear, monthly reports to monitor battery health, performance, and benchmarks—helping you maintain your EV&apos;s value over time.",
   },
   {
-    img: "/advantage_5.svg",
+    img: "advantage_5.svg",
     alt: "advantage5",
     title: "Tips & Diagnostics for a Better Future",
     text: "Receive expert tips to optimize your battery&apos;s performance and ensure quick diagnosis of potential issues.",
   },
   {
-    img: "/advantage_6.svg",
+    img: "advantage_6.svg",
     alt: "advantage6",
     title: "It&apos;s Free!",
     text: "Absolutely free for every EV owner. No hidden fees, no fine print—just the insights you need",

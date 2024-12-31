@@ -59,12 +59,10 @@ export default function Join() {
             </p>
 
             <Button
-              variant="secondary"
-              className="mt-5 h-[45px] w-[140px] bg-primary lg:mt-10 lg:h-[65px] lg:w-[230px] lg:text-2xl"
+              asChild
+              className="mt-5 h-[45px] w-[140px] bg-primary text-black lg:mt-10 lg:h-[65px] lg:w-[230px] lg:text-2xl"
             >
-              <Link href="/login" className="text-black">
-                Sign Up Now!
-              </Link>
+              <Link href="/login">Read More</Link>
             </Button>
           </div>
         </div>

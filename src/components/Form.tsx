@@ -84,6 +84,8 @@ export default function Logform() {
                       placeholder={ph.placeholder}
                       {...field}
                       className="text-black text-[14px] lg:text-[18px]  "
+                      aria-describedby={ph.name}
+                      id={ph.name}
                     />
                   </FormControl>
                   <FormMessage />
